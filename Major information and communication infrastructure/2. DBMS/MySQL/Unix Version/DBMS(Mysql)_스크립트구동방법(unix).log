@@ -1,0 +1,25 @@
+1> 서버에 root로 접속 (or 다른 계정 접속 후 su 로 관리자 권한으로 변경)
+    # su -
+
+2> 루트 디렉토리(최상위 디렉토리)에think 디렉토리 생성
+    # mkdir think
+
+3> think 디렉토리 권한 변경
+    # chmod 777 think
+
+4> think 디렉토리 이동
+    # cd /think
+
+5> think 폴더에 Mysql.sh 스크립트 업로드
+
+
+6> 스크립트 실행 파일 권한 변경
+   # chmod 777 Mysql.sh
+
+7> 진단 스크립트 실행
+   # ./Mysql.sh
+
+8> 결과파일 다운로드 및 전달
+   예) 호스트명_mysql.txt 파일
+
+9> 모든작업 완료 후 think 폴더 및 스크립트 삭제 

@@ -1,0 +1,36 @@
+1> 서버에 root로 접속 (or 다른 계정 접속 후 su 로 관리자 권한으로 변경)
+    # su -
+
+2> 루트 디렉토리(최상위 디렉토리)에 logthink 디렉토리 생성
+    # mkdir /logthink
+
+3> logthink 디렉토리 권한 변경
+    # chmod 777 /logthink
+
+4> logthink 디렉토리 이동
+    # cd /logthink
+
+5> logthink 폴더에 스크립트 업로드(3개 파일)
+
+6> 스크립트 실행 파일 권한 변경
+   # chmod 777 (3개 파일)
+
+7> oracle계정으로 변경
+   # su - oracle 
+
+8> logthink디렉토리로 경로 이동
+   # cd /logthink
+
+9> oracle 홈 디렉토리 경로 확인
+   # set | grep -i oracle_home
+
+10> DB쿼리를 위한 sqlplus 실행
+   # sqlplus "/as sysdba"
+
+11> ORACLE 진단 스크립트 실행
+   SQL> @logthink_oracle_unix_[버전].sql 
+
+12> 결과파일 다운로드 및 전달
+   결과파일 예시) hostname_[날짜]_oracle_[인스턴스명].txt
+
+13> 모든작업 완료 후 logthink 폴더 및 스크립트 삭제 
