@@ -1,0 +1,36 @@
+#####WA-002 디렉터리 쓰기 권한 설정, WA-003 설정파일 권한 설정
+1) cd /etc/nginx/conf.d
+ls -al
+2) default.conf 파일만 있는 경우
+cat default.conf
+ > location 값 확인
+3) location (예. /usr/share/nginx/html) 이동
+ls -al
+ > 디렉터리 권한 확인
+ > 소스파일 권한 확인
+#####WA-004 로그 디렉터리/파일 권한 설정
+1) nginx.conf 파일 log 위치 확인
+2)블록 또는 문자 디바이스 파일인 경우, docker 설치된 host os 확인
+ > 컨테이너 id 확인 : docker ps
+ > cd /var/lib/docker/[container id]/[containerid-json.log] 권한 확인
+ 
+#####WA-005 디렉터리 리스팅 제거, WA-006 FollowSymLinks 제거, WA-008 응답 메시지 헤더 정보 숨기기
+1) nginx.conf 파일
+ > autoindex 옵션 off 또는 제거
+ > followsymlinks 옵션 제거 또는 disable_symlinks on;
+ > Server_Tokens off; 설정
+ 
+#####WA-010 HTTP Method 제한, WA-011 로그 설정 관리
+1) nginx.conf 또는 conf.d 하위 설정파일 확인
+ > Method 제한
+Location / {
+        If($request_method!~^(GET|HEAD|POST)$) {
+            Return 444;
+        }
+ > 로그 설정 관리 
+ Error_log logs/error.log notice;
+ access_log logs/access.log main;
+2) options, delete 테스트 (위 설정 없는 경우)
+- curl -v -X OPTIONS http://[server_name]
+##### WA-016 최신 패치 적용
+nginx -v
