@@ -1,0 +1,21 @@
+[Tomcat]
+[002]
+1) 웹 서버 홈 디렉터리 권한 확인(/server.xml에 <appBase>확인)
+#  ls -ald [웹 서버 홈 디렉터리]
+2) 관리서버 홈 디렉터리 권한 확인
+#  ls -ald [관리서버 홈 디렉터리]
+: /$Tomcat_HOME/webapps/manager (Tomcat 6.x/7.x)
+: /$Tomcat_HOME/server/webapps/manager (Tomcat 5.x)
+[003]
+1) 소스파일 권한 확인(server.xml(appBase 확인))
+#  ls -alL  [소스파일]
+2) 설정파일 권한 확인(해당파일: *.xml, *.properties, *.policy)
+#  ls -alL /$Tomcat_HOME/conf/
+[004]
+1) 패스워드 파일 권한 확인
+#  ls -alL tomcat-users.xml
+[005]
+1) 로그 디렉터리 권한 확인
+#  ls -ald /$Tomcat_HOME/logs/
+2) 로그 파일 권한 확인
+#  ls
